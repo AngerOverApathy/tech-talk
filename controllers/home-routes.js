@@ -7,9 +7,9 @@ router.get('/', (req, res) => {
     Post.findAll({
         attributes: [
             'id',
+            'post_text',
             'title',
             'created_at',
-            'post_content'
         ],
         include: [
             {
@@ -57,5 +57,51 @@ router.get('/login', (req, res) => {
     res.render('login');
   });
 
+//render single post
+router.get('/post/:id', (req,res) => {
+    Post.findOne({
+        where: {
+            id: req.params.id //specificy post id parameter
+        },
+        attributes: [
+            'id',
+            'post_text',
+            'title',
+            'created_at',
+        ],
+        include: [
+            {
+                model: User,
+                attributes: ['username']
+            },
+            {
+                model: Comment,
+                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+                include: {
+                    model: User,
+                    attributes: ['username']
+                }
+            }
+        ]
+    })
+    .then(dbPostData => {
+        if (!dbPostData) { //if no post with id found, throw err
+            res.status(404).json({ message: 'No post found with this id' });
+            return;
+        }
+
+        const post = dbPostData.get({ plain: true }); //serialize data
+  
+        // pass post and session to template
+        res.render('single-post', {
+            post,
+            loggedIn: req.session.loggedIn
+          });
+      })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    })
+})
 
 module.exports = router;

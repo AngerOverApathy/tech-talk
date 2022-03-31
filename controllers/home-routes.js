@@ -86,11 +86,11 @@ router.get('/post/:id', (req,res) => {
     })
     .then(dbPostData => {
         if (!dbPostData) { //if no post with id found, throw err
-            res.status(404).json({ message: 'No post found with this id' });
-            return;
+            res.status(404).json({ message: 'No post found with this id' })
+            return
         }
 
-        const post = dbPostData.get({ plain: true }); //serialize data
+        const post = dbPostData.get({ plain: true }) //serialize data
   
         // pass post and session to template
         res.render('single-post', {
@@ -99,8 +99,8 @@ router.get('/post/:id', (req,res) => {
           });
       })
     .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
+        console.log(err)
+        res.status(500).json(err)
     })
 })
 

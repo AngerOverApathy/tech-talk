@@ -40,7 +40,7 @@ router.get('/', withAuth, (req, res) => {
       })
   })
 
-  //route - edit post page for user
+//route - edit post page for user
 router.get('/edit/:id', withAuth, (req, res) => {
     Post.findOne({
       where: {
@@ -78,7 +78,5 @@ router.get('/edit/:id', withAuth, (req, res) => {
       .catch(err => {
         console.log(err)
         res.status(500).json(err)
-      });
-  });
-
-  //route - edit user
+      })
+  })

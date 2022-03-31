@@ -36,3 +36,26 @@ router.get('/', (req, res) => {
         res.status(500).json(err);
     })
 })
+
+// sign up page render
+router.get('/signup', (req, res) => {
+    if (req.session.loggedIn) {
+      res.redirect('/');
+      return;
+    }
+  
+    res.render('signup');
+  });
+
+//login page render
+router.get('/login', (req, res) => {
+    if (req.session.loggedIn) {
+      res.redirect('/');
+      return;
+    }
+  
+    res.render('login');
+  });
+
+
+module.exports = router;

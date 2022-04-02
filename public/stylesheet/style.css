@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    background-color: aquamarine;
+    color: black;
+    font-family: Arial, Tahoma, sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    color: black;
+    font-weight: bold;
+  }
+  
+  a:hover {
+    color: #eb34cd;
+  }

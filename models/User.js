@@ -48,6 +48,12 @@ User.init(
                 return newUser;
             }
         }
+    },
+    {
+        sequelize,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'user'
     }
 )
 

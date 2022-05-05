@@ -16,5 +16,22 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.2.0",
     "nodemon": "^2.0.15"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "tech-talk",
+  "description": "",
+  "version": "1.0.0",
+  "main": ".eslintrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AngerOverApathy/tech-talk.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AngerOverApathy/tech-talk/issues"
+  },
+  "homepage": "https://github.com/AngerOverApathy/tech-talk#readme"
 }

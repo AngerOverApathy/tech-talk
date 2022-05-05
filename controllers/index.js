@@ -1,8 +1,9 @@
-const router = require('express').Router
+const router = require('express').Router();
 
 const apiRoutes = require('./api') //pull routes from api
+
 const homeRoutes = require('./home-routes.js') //route for homepage
-const dashboardRoutes = ('./dashboard-routes.js') //dashboard routes
+const dashboardRoutes = require('./dashboard-routes.js') //dashboard routes
 
 //server paths for api, home, and dash
 router.use('/api', apiRoutes) 

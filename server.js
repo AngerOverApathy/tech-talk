@@ -2,14 +2,14 @@
 const express = require('express')
 const path = require('path')
 const routes = require('./controllers') //routes in controller folder
-const sequelize = require('/config/connection') //connect to database
+const sequelize = require('./config/connection') //connect to database
 
 //configure info
 require('dotenv').config()
 
 const exphbs = require('express-handlebars') //front end handlebars
-const hbs = exphbs.create({ helpers }) //handlebars init for html
 const helpers = require('./utils/helpers') //hbs helpers
+const hbs = exphbs.create({ helpers }) //handlebars init for html
 
 const session = require('express-session') //for cookies
 
@@ -40,7 +40,7 @@ app.use(express.static(path.join(__dirname, 'public'))) //server path for static
 
 //set handlebars as server engine
 app.engine('handlebars', hbs.engine)
-app.set('view engine', handlebars)
+app.set('view engine', 'handlebars')
 
 app.use(routes) //server to routes path
 

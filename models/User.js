@@ -47,9 +47,7 @@ User.init(
                 newUser.password = await bcrypt.hash(newUser.password, 10)
                 return newUser;
             }
-        }
-    },
-    {
+        },
         sequelize,
         freezeTableName: true,
         underscored: true,

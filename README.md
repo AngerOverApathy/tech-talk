@@ -15,7 +15,7 @@ A blog site that let's you make posts to share your thoughts, and comment on oth
 <br/>
 
 ## Link <a name="link"/>
-https://git.heroku.com/tech-talk-mvc.git
+https://mvc-tech-talk.herokuapp.com/
 
 
 <br/>
